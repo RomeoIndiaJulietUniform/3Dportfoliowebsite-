@@ -15,7 +15,7 @@ export const Overlay = () =>{
             <div className={`loader ${progress === 100 ? "loader-disappear" : ""}`} />
             {progress === 100 && (
             <div className={`intro ${play ? "intro--disappear" : ""}`}>
-                <h1 className="logo">rijumondal.netlify.app</h1>
+                <h1 className="logo">rijumondal.vercel.app</h1>
                 <p className="intro__scroll">
                   Scroll to Experience
                 </p>

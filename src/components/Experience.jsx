@@ -59,7 +59,7 @@ export const Experience = () => {
 
       ),
 
-      title: 'Hii I am Riju Mondal, A Full Stack Developer && SDET'
+      title: 'Hii I am Riju Mondal, A Fronted && NodeJs Developer'
     },
     {
       position: new THREE.Vector3(
@@ -73,10 +73,10 @@ export const Experience = () => {
       
       subtitle1: 'I. MERN ChatApp with UIDs',                                                                            
       subtitle2: 'II. Movie Recommendation App with React',
-      subtitle3: 'III. 3D Portfolio Website with React3Fibre',
+      subtitle3: 'III. Java Object Oriented Programming',
       subtitleLinkURL1: 'https://github.com/RomeoIndiaJulietUniform/ChatApp',
       subtitleLinkURL2: 'https://github.com/RomeoIndiaJulietUniform/MovieRecomApp',
-      subtitleLinkURL3: 'https://github.com/rijuoddusual1999/Stock_Display_Dashboard'
+      subtitleLinkURL3: 'https://github.com/RomeoIndiaJulietUniform/Java_OOPS'
 
     },
     {
@@ -87,11 +87,13 @@ export const Experience = () => {
 
       ),
 
-      title: 'Work Experience',
-      subtitle1: '1.QA Engineering on Backend/DE front',
-      subtitle2: '2.QA Engineering on Frontend/Mashup UI',
-      subtitleLinkURL1:'https://qaexp.netlify.app/category/quality-assurance-for-backenddataengineering',
-      subtitleLinkURL2:'https://qaexp.netlify.app/category/quality-assurance-for-frontendmashup-ui',
+      title: 'Achievements',
+      subtitle1: '1.LeetCode Knight Badge with 500+ Problems Solved',
+      subtitle2: '2. CodeForces Max Rating of 1417(Specialist)',
+      subtitle3: '3. Cleared Air Force Common Admission Test Twice and Coast Gaurd Common Admission Test',
+      subtitleLinkURL1:'https://leetcode.com/u/riju1/',
+      subtitleLinkURL2:'https://codeforces.com/profile/nevermind0109',
+      subtitleLinkURL3: 'https://drive.google.com/file/d/1xfiuK7-gbtKIO0SBqdnjjf56DuOGRuUC/view',
       
       
 
@@ -106,12 +108,12 @@ export const Experience = () => {
 
       ),
 
-      title: 'Profiles',
-      subtitle1: '1.Leetcode',
-      subtitle2: '2.Codeforces',
+      title: 'Contact',
+      subtitle1: '1.mailrijumondal@gmail.com',
+      subtitle2: '2.+91 9330477186',
       subtitle3: '3.Linkedin',
-      subtitleLinkURL1: 'https://leetcode.com/riju1/',
-      subtitleLinkURL2: 'https://codeforces.com/profile/nevermind0109',
+      subtitleLinkURL1: 'mailto:mailrijumondal@gmail.com"',
+      subtitleLinkURL2: 'tel:+919330477186',
       subtitleLinkURL3: 'https://www.linkedin.com/in/riju-mondal-137686244/'
       
 

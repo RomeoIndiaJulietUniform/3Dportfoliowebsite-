@@ -59,7 +59,7 @@ export const Experience = () => {
 
       ),
 
-      title: 'Hii I am Riju Mondal, A Fronted && NodeJs Developer'
+      title: 'Hii I am Riju Mondal, A Frontend && NodeJs Developer'
     },
     {
       position: new THREE.Vector3(

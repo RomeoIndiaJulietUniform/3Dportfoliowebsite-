@@ -1,38 +1,49 @@
-import { Loader, useProgress } from "@react-three/drei"
+import { Loader, useProgress } from "@react-three/drei";
 import { usePlay } from "../context/play";
+import React, { useMemo } from "react";
 
-export const Overlay = () =>{
-    
-    const {progress} = useProgress();
-    const {setPlay,end, play,hasScroll} = usePlay();
+export const Overlay = () => {
+  const { progress } = useProgress();
+  const { setPlay, end, play, hasScroll } = usePlay();
 
+  
+  const overlayClass = useMemo(
+    () =>
+      `overlay ${play ? "overlay--disable" : ""} ${
+        hasScroll ? "overlay--scrolled" : ""
+      }`,
+    [play, hasScroll]
+  );
 
-    return(
-      <div
-      className={`overlay ${play ? "overlay--disable" : ""}
-    ${hasScroll ? "overlay--scrolled" : ""}`}
-    >
-            <div className={`loader ${progress === 100 ? "loader-disappear" : ""}`} />
-            {progress === 100 && (
-            <div className={`intro ${play ? "intro--disappear" : ""}`}>
-                <h1 className="logo">rijumondal.vercel.app</h1>
-                <p className="intro__scroll">
-                  Scroll to Experience
-                </p>
-                <div className="scroll"><button
-            className="explore"
-            onClick={() => {
-              setPlay(true);
-            }}
-          >
-            Start the Journey
-          </button></div>
-            </div>
-            )}
+  const loaderClass = useMemo(
+    () => `loader ${progress === 100 ? "loader-disappear" : ""}`,
+    [progress]
+  );
 
-        
-         
-        
+  const introClass = useMemo(
+    () => `intro ${play ? "intro--disappear" : ""}`,
+    [play]
+  );
+
+  return (
+    <div className={overlayClass}>
+      <div className={loaderClass} />
+      {progress === 100 && (
+        <div className={introClass}>
+          <h1 className="logo">rijumondal.vercel.app</h1>
+          <p className="intro__scroll">Scroll to Experience</p>
+          <div className="scroll">
+            <button
+              className="explore"
+              onClick={() => {
+                setPlay(true);
+              }}
+            >
+              Start the Journey
+            </button>
+          </div>
         </div>
-    )
-}
+      )}
+    </div>
+  );
+};

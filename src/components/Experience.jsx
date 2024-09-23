@@ -326,9 +326,7 @@ export const Experience = () => {
 
 
     if (CameraGroup.current.position.z <curvepoints[curvepoints.length - 1].z + 100)
-      
-      
-     {
+    {
       setEnd(true);
       planeOutTl.current.play();
     }
@@ -363,31 +361,54 @@ export const Experience = () => {
       y: -2
     });
 
+     
     planeOutTl.current = gsap.timeline();
     planeOutTl.current.pause();
-
+    
     planeOutTl.current.to(
       airplane.current.position,
       {
-        duration: 10,
+        duration: 15,
         z: -250,
-        y: 10,
+        y: -5,
+        ease: "power1.inOut",
       },
       0
     );
-    planeOutTl.current.to(
-      cameraRail.current.position,
-      {
-        duration: 8,
-        y: 12,
-      },
-      0
-    );
-    planeOutTl.current.to(airplane.current.position, {
-      duration: 1,
-      z: -1000,
-    });
     
+    planeOutTl.current.to(
+      CameraGroup.current.position,
+      {
+        duration: 15,
+        y: 350,
+        z: -50,
+        ease: "power1.inOut",
+      },
+      0
+    );
+    
+    planeOutTl.current.to(
+      Camera.current,
+      {
+        duration: 15,
+        fov: 20,
+        ease: "power1.inOut",
+      },
+      0
+    );
+    
+    planeOutTl.current.to(
+      airplane.current.position,
+      {
+        duration: 20,
+        z: -500,
+        y: -15,
+        ease: "power2.in",
+      },
+      "+=0"
+    );
+    
+
 
   },[]);
 

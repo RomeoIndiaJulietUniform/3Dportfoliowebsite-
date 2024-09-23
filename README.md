@@ -1,6 +1,6 @@
 # My 3D Portfolio Site
 
-![Portfolio Site Screenshot](./public/PortfolioSS.png)
+![Portfolio Site Screenshot](./public/Portfolio.png)
 
 Welcome to my 3D portfolio site, where I showcase my work and projects in an interactive and visually captivating manner. I've built this site with React Three Fiber (R3F) and Three.js, making it a powerful platform to display my 3D models and animations.
 

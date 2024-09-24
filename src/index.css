@@ -29,6 +29,7 @@ body {
   height: 100%;
 }
 
+
 .logo{
   position: absolute;
   color: #ffffff;
@@ -162,6 +163,39 @@ body {
   animation: fadeOut 1s ease-in-out forwards;
 }
 
+.outro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 6s ease-in-out;
+}
+
+.outro--appear{
+  opacity: 1;
+}
+
+.outro-text{
+  font-family: 'Croissant One', cursive;
+  font-size: 3rem;
+  color: white;
+}
+
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 @keyframes fadeOut{
   0%{
     opacity: 1;
@@ -208,25 +242,24 @@ body {
 }
 
 
-.outro {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Croissant One', cursive;
-  color: white;
-  opacity: 0;
-  transition: opacity 4s ease-in-out;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.outro--appear {
-  opacity: 1;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
+
 
 
 

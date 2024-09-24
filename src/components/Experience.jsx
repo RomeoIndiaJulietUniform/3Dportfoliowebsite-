@@ -328,6 +328,7 @@ export const Experience = () => {
     if (CameraGroup.current.position.z <curvepoints[curvepoints.length - 1].z + 100)
     {
       setEnd(true);
+      console.log("End Marked")
       planeOutTl.current.play();
     }
 

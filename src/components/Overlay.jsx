@@ -6,12 +6,8 @@ export const Overlay = () => {
   const { progress } = useProgress();
   const { setPlay, end, play, hasScroll } = usePlay();
 
-  
   const overlayClass = useMemo(
-    () =>
-      `overlay ${play ? "overlay--disable" : ""} ${
-        hasScroll ? "overlay--scrolled" : ""
-      }`,
+    () => `overlay ${play ? "overlay--disable" : ""} ${hasScroll ? "overlay--scrolled" : ""}`,
     [play, hasScroll]
   );
 
@@ -25,6 +21,10 @@ export const Overlay = () => {
     [play]
   );
 
+  const handleStartJourney = () => {
+    setPlay(true);
+  };
+
   return (
     <div className={overlayClass}>
       <div className={loaderClass} />
@@ -33,17 +33,15 @@ export const Overlay = () => {
           <h1 className="logo">rijumondal.vercel.app</h1>
           <p className="intro__scroll">Scroll to Experience</p>
           <div className="scroll">
-            <button
-              className="explore"
-              onClick={() => {
-                setPlay(true);
-              }}
-            >
+            <button className="explore" onClick={handleStartJourney}>
               Start the Journey
             </button>
           </div>
         </div>
       )}
+      <div className={`outro ${end ? "outro--appear": ""}`}>
+        <p className="outro-text">Thanks for Visiting!</p>
+      </div>
     </div>
   );
 };

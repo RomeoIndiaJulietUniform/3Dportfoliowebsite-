@@ -75,13 +75,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fade 7s ease-in-out;;
-
-
+  animation: fade 3s ease-in-out;
+  pointer-events: auto;
 }
 
 @keyframes fade{
   0%{
+    opacity: 0;
+  }
+  66%{
     opacity: 0;
   }
   100%{

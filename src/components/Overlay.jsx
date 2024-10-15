@@ -23,7 +23,7 @@ export const Overlay = () => {
 
   const handleStartJourney = () => {
     setPlay(true);
-  };
+  };  
 
   return (
     <div className={overlayClass}>
@@ -44,4 +44,4 @@ export const Overlay = () => {
       </div>
     </div>
   );
-};
+}

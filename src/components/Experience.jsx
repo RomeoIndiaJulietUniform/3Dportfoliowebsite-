@@ -110,11 +110,11 @@ export const Experience = () => {
 
       title: 'Contact',
       subtitle1: '1.mailrijumondal@gmail.com',
-      subtitle2: '2.+91 9330477186',
-      subtitle3: '3.Linkedin',
+      subtitle2: '2.Linkedin',
+      subtitle3: '3.Github',
       subtitleLinkURL1: 'mailto:mailrijumondal@gmail.com"',
-      subtitleLinkURL2: 'tel:+919330477186',
-      subtitleLinkURL3: 'https://www.linkedin.com/in/riju-mondal-137686244/'
+      subtitleLinkURL2: 'https://www.linkedin.com/in/riju-mondal-137686244/',
+      subtitleLinkURL3: 'https://github.com/RomeoIndiaJulietUniform'
       
 
     }

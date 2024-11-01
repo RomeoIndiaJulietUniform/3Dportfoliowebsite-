@@ -1,4 +1,4 @@
-import { Loader, useProgress } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
 import { usePlay } from "../context/play";
 import React, { useMemo } from "react";
 

@@ -1,4 +1,4 @@
-import { Float,OrbitControls,useScroll,Text } from "@react-three/drei";
+import { Float,useScroll } from "@react-three/drei";
 import { PerspectiveCamera } from "@react-three/drei";
 import { Background } from "./background";
 import { Airplane } from "./airplane";
@@ -53,13 +53,13 @@ export const Experience = () => {
   const textSection = useMemo(() => {
     return[{
       position: new THREE.Vector3(
-        curvepoints[0].x-2,
+        curvepoints[0].x-1.3,
         curvepoints[0].y+0,
         curvepoints[0].z-4
 
       ),
 
-      title: 'Hii I am Riju Mondal, A Java FullStack Developer'
+      title: 'Hii I am Riju Mondal, A FullStack Java Developer'
     },
     {
       position: new THREE.Vector3(

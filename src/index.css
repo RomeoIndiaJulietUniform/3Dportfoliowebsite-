@@ -274,6 +274,14 @@ body {
     letter-spacing: 0.25rem;
   }
 
+  .outro-text{
+    font-family: 'Croissant One', cursive;
+    font-size: 1.2rem;
+    color: white;
+  }
+
+  
+
   .explore {
     padding: .7rem 1.5rem;
     border: none;
@@ -299,5 +307,9 @@ body {
     justify-content: center;
     font-size: 1.2rem;
 
+  }
+
+  .logo{
+    font-size: 1.4rem;
   }
 }

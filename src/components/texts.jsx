@@ -1,5 +1,5 @@
 import { Text } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 
 export const TextSection = ({ sceneOpacity, title,subtitleLinkURL1,subtitleLinkURL2,subtitleLinkURL3, subtitle1,subtitle2,subtitle3, ...props }) => {
@@ -10,7 +10,7 @@ export const TextSection = ({ sceneOpacity, title,subtitleLinkURL1,subtitleLinkU
   const [subtitleHovered1, setSubtitleHover1] = useState(false);
   const [subtitleHovered2, setSubtitleHover2] = useState(false);
   const [subtitleHovered3, setSubtitleHover3] = useState(false);
-  const { camera } = useThree();
+
   
    
 

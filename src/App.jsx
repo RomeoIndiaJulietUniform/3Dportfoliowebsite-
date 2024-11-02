@@ -21,6 +21,7 @@ function App() {
         <ScrollControls pages={play && !end ? 6 : 0} damping={0.7}>
         <Experience />
         </ScrollControls>
+        {end}
       </Canvas>
       <Overlay/>
     </>

@@ -1,0 +1,23 @@
+{
+    "routes": [
+      {
+        "src": "/models/airplane/model2\\.glb",
+        "headers": {
+          "Cache-Control": "public, max-age=2592000, immutable"
+        },
+        "dest": "/models/airplane/model2.glb"
+      },
+      {
+        "src": "/models/cloud/model\\.glb",
+        "headers": {
+          "Cache-Control": "public, max-age=2592000, immutable"
+        },
+        "dest": "/models/cloud/model.glb"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/$1"
+      }
+    ]
+  }
+  

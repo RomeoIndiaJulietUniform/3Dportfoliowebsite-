@@ -2,7 +2,17 @@ import { Text } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 
-export const TextSection = ({ sceneOpacity, title,subtitleLinkURL1,subtitleLinkURL2,subtitleLinkURL3, subtitle1,subtitle2,subtitle3, ...props }) => {
+export const TextSection = ({
+  sceneOpacity,
+  title,
+  subtitleLinkURL1,
+  subtitleLinkURL2,
+  subtitleLinkURL3,
+  subtitle1,
+  subtitle2,
+  subtitle3,
+  ...props
+}) => {
   const titleMaterialRef = useRef();
   const subtitleMaterialRef1 = useRef();
   const subtitleMaterialRef2 = useRef();
@@ -11,23 +21,14 @@ export const TextSection = ({ sceneOpacity, title,subtitleLinkURL1,subtitleLinkU
   const [subtitleHovered2, setSubtitleHover2] = useState(false);
   const [subtitleHovered3, setSubtitleHover3] = useState(false);
 
-  
-   
-
-  
-
   const handleSubtitleClick1 = () => {
     window.open(subtitleLinkURL1, "_blank");
   };
 
-
-  
   const handleSubtitleClick2 = () => {
     window.open(subtitleLinkURL2, "_blank");
   };
 
-
-  
   const handleSubtitleClick3 = () => {
     window.open(subtitleLinkURL3, "_blank");
   };
@@ -35,7 +36,7 @@ export const TextSection = ({ sceneOpacity, title,subtitleLinkURL1,subtitleLinkU
   useFrame(() => {
     titleMaterialRef.current.opacity = sceneOpacity.current;
     subtitleMaterialRef1.current.opacity = sceneOpacity.current;
-    subtitleMaterialRef2.current.opacity =sceneOpacity.current;
+    subtitleMaterialRef2.current.opacity = sceneOpacity.current;
     subtitleMaterialRef3.current.opacity = sceneOpacity.current;
   });
 
@@ -43,7 +44,7 @@ export const TextSection = ({ sceneOpacity, title,subtitleLinkURL1,subtitleLinkU
     <>
       <group {...props}>
         <Text
-          color= "white"
+          color="white"
           anchorX="right"
           anchorY="bottom"
           fontSize={1}
@@ -57,7 +58,7 @@ export const TextSection = ({ sceneOpacity, title,subtitleLinkURL1,subtitleLinkU
         <Text
           color={subtitleHovered1 ? "red" : "white"}
           anchorX="right"
-          anchorY = {0}
+          anchorY={0}
           fontSize={0.7}
           maxWidth={10}
           font="/Fonts/Fuggles/Fuggles-Regular.ttf"
@@ -84,7 +85,6 @@ export const TextSection = ({ sceneOpacity, title,subtitleLinkURL1,subtitleLinkU
           <meshStandardMaterial ref={subtitleMaterialRef2} />
         </Text>
 
-        
         <Text
           color={subtitleHovered3 ? "red" : "white"}
           anchorX="right"

@@ -1,72 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Croissant+One&family=Fuggles&family=Indie+Flower&family=Poppins:wght@200;300&family=Roboto&family=Roboto+Condensed:wght@300&display=swap');
-
-
+/* Croissant One is loaded via <link> in index.html (non-blocking, only the family that's used). */
 #root {
   width: 100vw;
   height: 100vh;
 }
-
 body {
   margin: 0;
 }
-
-
-.overlay{
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0; 
-  right: 0; 
-
+  bottom: 0;
+  right: 0;
 }
-
-
-.intro{
+.intro {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100%;
 }
-
-
-.logo{
+.logo {
   position: absolute;
   color: #ffffff;
-  font-family: 'Croissant One', cursive;
+  font-family: "Croissant One", cursive;
   font-size: 4rem;
   letter-spacing: 0.5rem;
   padding: 0;
-  margin: 0; 
+  margin: 0;
   transform: translateY(-50%);
   top: 50vh;
   animation: fadeUp 2.4s ease-in-out;
   transition: all 2s ease-in-out;
-  
-
 }
-
-@keyframes fadeUp{ 
-  0%{
-    opacity: 0; 
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
     transform: translateY(100px);
-    filter:blur(9px)
-
+    filter: blur(9px);
   }
-  100%{
-
+  100% {
     opacity: 1;
     filter: none;
-
   }
-
 }
-
-
-
-
-.scroll{
-  font-family: 'Croissant One', cursive;
+.scroll {
+  font-family: "Croissant One", cursive;
   font-size: 1.25rem;
   letter-spacing: 0.25rem;
   color: rgb(28, 67, 225);
@@ -78,41 +57,33 @@ body {
   animation: fade 3s ease-in-out;
   pointer-events: auto;
 }
-
-@keyframes fade{
-  0%{
+@keyframes fade {
+  0% {
     opacity: 0;
   }
-  66%{
+  66% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
-
-.loader{
+.loader {
   position: absolute;
-  top:0;
-  left:0;
-  right:0;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
   background: white;
   transition: opacity 1s ease-in-out;
 }
-
-.loader-disappear{
-
+.loader-disappear {
   opacity: 0;
-
 }
-
-
-
 .explore {
   padding: 1rem 2rem;
   border: none;
-  font-family: 'Croissant One', cursive;
+  font-family: "Croissant One", cursive;
   font-size: 1.25rem;
   letter-spacing: 0.25rem;
   color: #3535cc;
@@ -128,18 +99,14 @@ body {
   animation: opacity 2.4s ease-in-out 2s forwards;
   opacity: 1;
 }
-
 .explore:hover {
   color: white;
 }
-
-
 .explore:hover:before {
   width: 200%;
   height: 300%;
   border-radius: 100%;
 }
-
 .explore:before {
   content: "";
   background: #3535cc;
@@ -152,19 +119,14 @@ body {
   z-index: -1;
   transform: translateX(-50%) translateY(50%);
 }
-
-
 .intro--disappear .logo {
   top: 42px;
   transform: scale(0.25);
   transform-origin: center top;
 }
-
-
-.intro--disappear .scroll{
+.intro--disappear .scroll {
   animation: fadeOut 1s ease-in-out forwards;
 }
-
 .outro {
   position: absolute;
   top: 0;
@@ -172,78 +134,132 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 0; /* Quick fade-out when going back to the start; the slow 6s fade-in is on .outro--appear. */
+  transition: opacity 0.8s ease-in-out;
+}
+.outro--appear {
+  opacity: 1;
   transition: opacity 6s ease-in-out;
 }
-
-.outro--appear{
-  opacity: 1;
-}
-
-.outro-text{
-  font-family: 'Croissant One', cursive;
+.outro-text {
+  font-family: "Croissant One", cursive;
   font-size: 3rem;
   color: white;
-}
-
-
-@keyframes fadeIn{
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut{
-  0%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-  }
-}
-
-
-.overlay--disable{
+} /* "Want to go back to the start?" prompt under the outro text */
+.outro-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Croissant One", cursive;
+  color: white;
+  visibility: hidden;
   pointer-events: none;
 }
-
-
+.outro--appear .outro-prompt {
+  pointer-events: auto; /* the overlay disables pointer events during the journey */
+  animation: promptIn 1s ease-in-out 3s both;
+}
+.outro--appear .outro-prompt.outro-prompt--dismissed {
+  pointer-events: none;
+  animation: promptOut 0.5s ease-in-out forwards;
+}
+.outro-prompt__question {
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  margin: 0 0 1.25rem;
+}
+.outro-prompt__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.outro-prompt .explore {
+  margin-top: 0;
+  animation: none;
+  font-size: 1rem;
+} /* Translucent dark pill so it stays readable over both the blue sky and the white horizon. */
+.outro-prompt__no {
+  background: rgba(20, 40, 80, 0.35);
+  border: none;
+  border-radius: 32px;
+  padding: 1rem 2rem;
+  font-family: "Croissant One", cursive;
+  font-size: 1rem;
+  letter-spacing: 0.25rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.outro-prompt__no:hover {
+  background: rgba(20, 40, 80, 0.55);
+}
+@keyframes promptIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+@keyframes promptOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.overlay--disable {
+  pointer-events: none;
+}
 .intro__scroll {
   opacity: 0;
   color: white;
-  font-family: 'Croissant One', cursive;
+  font-family: "Croissant One", cursive;
   font-size: 3rem;
   letter-spacing: 0.05rem;
   position: absolute;
   top: 24vh;
 }
-
 .intro--disappear .intro__scroll {
   animation: fadeIn 1s ease-in-out 1.5s forwards;
 }
-
 .overlay--scrolled .intro__scroll {
   animation: fadeOut 1s ease-in-out forwards;
 }
-
-
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
 }
-
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -252,7 +268,6 @@ body {
     opacity: 1;
   }
 }
-
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -260,33 +275,38 @@ body {
   to {
     opacity: 0;
   }
-}
-
-
-
-
-/* media queries */
-
-
+} /* media queries */
 @media screen and (max-width: 768px) {
   .logo {
     font-size: 2rem;
     letter-spacing: 0.25rem;
   }
-
-  .outro-text{
-    font-family: 'Croissant One', cursive;
+  .outro-text {
+    font-family: "Croissant One", cursive;
     font-size: 1.2rem;
     color: white;
   }
-
-  
-
+  .outro-prompt__question {
+    font-size: 1rem;
+    margin-bottom: 0.9rem;
+  }
+  .outro-prompt__actions {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .outro-prompt .explore,
+  .outro-prompt__no {
+    font-size: 0.85rem;
+  }
+  .outro-prompt__no {
+    padding: 0.7rem 1.5rem;
+    letter-spacing: 0.15rem;
+  }
   .explore {
-    padding: .7rem 1.5rem;
+    padding: 0.7rem 1.5rem;
     border: none;
-    font-family: 'Croissant One', cursive;
-    font-size: .9rem;
+    font-family: "Croissant One", cursive;
+    font-size: 0.9rem;
     letter-spacing: 0.15rem;
     color: #3535cc;
     border-radius: 32px;
@@ -301,15 +321,12 @@ body {
     animation: fadeIn 2.4s ease-in-out 2s forwards;
     opacity: 1;
   }
-
-  .intro__scroll{
+  .intro__scroll {
     display: flex;
     justify-content: center;
     font-size: 1.2rem;
-
   }
-
-  .logo{
+  .logo {
     font-size: 1.4rem;
   }
 }

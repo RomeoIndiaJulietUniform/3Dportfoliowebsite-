@@ -14,7 +14,6 @@ Welcome to my 3D portfolio site, where I showcase my work and projects in an int
 
 - **Smooth Animations**: I've incorporated smooth animations to enhance your experience and bring my projects to life.
 
-
 ## Technologies Utilized
 
 - [React](https://reactjs.org/): I've harnessed this JavaScript library to build the user interface.
@@ -35,21 +34,18 @@ Welcome to my 3D portfolio site, where I showcase my work and projects in an int
 
 2. Navigate to project directory:
 
-    ```bash
-    cd 3dportfoliowebsite
-    ```
+   ```bash
+   cd 3dportfoliowebsite
+   ```
 
 3. Install the required dependencies:
 
-    
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 4. Start the local hosting:
 
-   
-    ```bash
-    npm run dev 
-    ```
-    
+   ```bash
+   npm run dev
+   ```

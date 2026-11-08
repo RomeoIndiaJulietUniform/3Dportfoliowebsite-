@@ -4,26 +4,24 @@ import { ScrollControls } from "@react-three/drei";
 import { Overlay } from "./components/Overlay";
 import { usePlay } from "./context/play";
 
-
 function App() {
-
-   const {end,play} = usePlay();
-
-
+  const { end, play } = usePlay();
 
   return (
     <>
-      <Canvas camera={{
-        position: [0, 0, 5],
-        fov: 30,
-      }}>
+      <Canvas
+        camera={{
+          position: [0, 0, 5],
+          fov: 30,
+        }}
+      >
         <color attach="background" args={["#ececec"]} />
         <ScrollControls pages={play && !end ? 6 : 0} damping={0.7}>
-        <Experience />
+          <Experience />
         </ScrollControls>
         {end}
       </Canvas>
-      <Overlay/>
+      <Overlay />
     </>
   );
 }
